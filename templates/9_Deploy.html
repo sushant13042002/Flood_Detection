@@ -1,0 +1,369 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href=" https://fonts.googleapis.com/icon?family=Material+Icons">
+  <script src="https://cdnjs.cloudflare.com/ajax/lib.4.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700,900&display=swap');
+
+body{
+	padding: 100px 0;
+	/* background: #ecf0f4; */
+  background: #9d9e72;
+	width: 100%;
+	height: 100%;
+	font-size: 18px;
+	line-height: 1.5;
+	font-family: 'Roboto', sans-serif;
+	color: #222;
+}
+.container{
+	max-width: 1230px;
+	width: 100%;
+}
+
+h1{
+	font-weight: 700;
+	font-size: 45px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.header{
+	margin-bottom: 80px;
+}
+#description{
+	font-size: 24px;
+}
+
+.form-wrap{
+	background: #7d7e64;
+	width: 100%;
+	max-width: 850px;
+	padding: 50px;
+	margin: 0 auto;
+	position: relative;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+}
+.form-wrap:before{
+	content: "";
+	width: 90%;
+	height: calc(100% + 60px);
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	position: absolute;
+	top: -30px;
+	background: #7d7e64;
+	z-index: -1;
+	opacity: 0.8;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
+}
+.form-group{
+	margin-bottom: 25px;
+}
+.form-group > label{
+	display: block;
+	font-size: 18px;	
+	color: #000;
+}
+.custom-control-label{
+	color: #000;
+	font-size: 16px;
+}
+.form-control{
+	height: 50px;
+	background: #ecf0f4;
+	border-color: transparent;
+	padding: 0 15px;
+	font-size: 16px;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.form-control:focus{
+	border-color: #00bcd9;
+	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+textarea.form-control{
+	height: 160px;
+	padding-top: 15px;
+	resize: none;
+}
+
+.btn{
+	padding: .657rem .75rem;
+	font-size: 18px;
+	letter-spacing: 0.050em;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #464734;
+  border-color: #7d7e64;
+}
+
+.btn-primary:hover {
+  color: #00bcd9;
+  background-color: #ffffff;
+  border-color: #00bcd9;
+	-webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:focus, .btn-primary.focus {
+  color: #00bcd9;
+  background-color: #ffffff;
+  border-color: #00bcd9;
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #00bcd9;
+  background-color: #ffffff;
+  border-color: #00bcd9;
+}
+
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	-moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+	box-shadow: 0px 0px 20px rgba(0, 0, 0, .1);
+}
+</style>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1 id="title" class="text-center">FLOOD DETECTION ON ADVERSE NATURAL CONDITION BY USING CATBOOST ALGORITHM</h1>
+      <p id="description" class="text-center">
+        FOR FLOOD ANALYSIS PURPOSE
+      </p>
+    </header>
+    <div class="form-wrap">	
+      <form id="survey-form" method="post">
+        {% csrf_token %}
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="name-label" for="name">MonsoonIntensity</label>
+              <input type="number" min="0" max="16" name="MonsoonIntensity" id="MonsoonIntensity" placeholder="Enter your MonsoonIntensity Value" class="form-control" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="email-label">TopographyDrainage</label>
+              <input type="number" min="0" max="18" name="TopographyDrainage" id="TopographyDrainage" placeholder="Enter your TopographyDrainage Value" class="form-control" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">RiverManagement </label>
+              <input type="number" min="0" max="16" name="RiverManagement" id="RiverManagement" class="form-control" placeholder=" Enter your RiverManagement Value" required oninput="validateInput(this)" >
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">Deforestation </label>
+              <input type="number" min="0" max="17" name="Deforestation" id="number" class="form-control" placeholder="Enter your Deforestation Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">Urbanization </label>
+              <input type="number" min="0" max="17" name="Urbanization" id="number" class="form-control" placeholder="Enter your Urbanization Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">ClimateChange </label>
+              <input type="number" min="0" max="17" name="ClimateChange" id="number" class="form-control" placeholder="Enter your ClimateChange Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">DamsQuality </label>
+              <input type="number" min="0" max="16" name="DamsQuality" id="number" class="form-control" placeholder="Enter your DamsQuality Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">Siltation </label>
+              <input type="number" min="0" max="16" name="Siltation" id="number" class="form-control" placeholder="Enter your Siltation Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">AgriculturalPractices </label>
+              <input type="number" min="0" max="16" name="AgriculturalPractices" id="number" class="form-control" placeholder="Enter your AgriculturalPractices Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">Encroachments </label>
+              <input type="number" min="0" max="18" name="Encroachments" id="number" class="form-control" placeholder="Enter your Encroachments Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">IneffectiveDisasterPreparedness </label>
+              <input type="number" min="0" max="20" name="IneffectiveDisasterPreparedness" id="number" class="form-control" placeholder="Enter your IneffectiveDisasterPreparedness Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">DrainageSystems </label>
+              <input type="number" min="0" max="17" name="DrainageSystems" id="number" class="form-control" placeholder="Enter your DrainageSystems Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">CoastalVulnerability </label>
+              <input type="number" min="0" max="17" name="CoastalVulnerability" id="number" class="form-control" placeholder="Enter your CoastalVulnerability Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">Landslides </label>
+              <input type="number"min="0" max="16" name="Landslides" id="number" class="form-control" placeholder="Enter your Landslides Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">Watersheds </label>
+              <input type="number" min="0" max="16" name="Watersheds" id="number" class="form-control" placeholder="Enter your Watersheds Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">DeterioratingInfrastructure </label>
+              <input type="number" min="0" max="17" name="DeterioratingInfrastructure" id="number" class="form-control" placeholder="Enter your DeterioratingInfrastructure Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">PopulationScore </label>
+              <input type="number" min="0" max="19" name="PopulationScore" id="number" class="form-control" placeholder="Enter your PopulationScore Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()">
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">WetlandLoss </label>
+              <input type="number" min="0" max="22" name="WetlandLoss" id="number" class="form-control" placeholder="Enter your WetlandLoss Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()"></form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">InadequatePlanning </label>
+              <input type="number" min="0" max="16" name="InadequatePlanning" id="number" class="form-control" placeholder="Enter your InadequatePlanning Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()"></form>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label id="number-label" for="number">PoliticalFactors </label>
+              <input type="number" min="0" max="16" name="PoliticalFactors" id="number" class="form-control" placeholder="Enter your PoliticalFactors Value" required oninput="validateInput(this)">
+              <form id="survey-form" method="post" onsubmit="return validateForm()"></form>
+            </div>
+          </div>
+                 
+        <div class="row">
+          <div class="col-md-4">
+            <button type="submit" id="submit" class="btn btn-primary btn-block=100% ">Submit Survey</button><br>
+          </div>
+          <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+            <a href="{% url 'Home_4'%}"><span  class="btn btn-dark btn-block">Back to Home</a></span><br><br>
+          </div>
+          <h2>{{ prediction_text }}</h2>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>	
+  </div>
+  <script>
+    // Function to validate individual input field
+    function validateInput(input) {
+        // If the value is less than 1, set it to 1
+        if (input.value < 0) {
+            input.value = 0;
+        }
+        // If the value is greater than 20, set it to 20
+        if (input.value > 20) {
+            input.value = 20;
+        }
+    }
+
+    // Function to validate the entire form before submission
+    function validateForm() {
+        var inputs = document.querySelectorAll('input[type="number"]');
+        var isValid = true;
+
+        // Loop through each input field
+        inputs.forEach(function(input) {
+            // If any input value is less than 1 or greater than 20, mark the form as invalid
+            if (input.value < 0 || input.value > 20) {
+                isValid = false;
+                // Optionally, you can display an error message here
+            }
+        });
+
+        // Return true if all input values are valid, otherwise return false to prevent form submission
+        return isValid;
+    }
+</script>
+
+</body>
+</html>

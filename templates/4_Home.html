@@ -1,0 +1,414 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+  margin: 0px;
+  background: #9d9e72;
+  padding: 0px;
+  font-family: 'Playfair Display', serif;
+}
+/* Pre made classes */
+.light {
+  color: white;
+}
+p {
+  margin-bottom: 40px;
+  text-align: justify;
+}
+.section {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+a.flat {
+  color: white;
+  border: solid 2px white;
+  padding: 10px 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+a.flat:hover {
+  color: black;
+  background: white;
+  transition: all 0.2s ease;
+}
+h1 {
+  font-size: 5em;
+}
+h2 {
+  font-size: 3.2em;
+}
+h3 {
+  font-size: 2.6em;
+}
+.heading-styled {
+  margin: 0px 0px 0px -3px;
+  color: #484634;
+  font-weight: bold;
+}
+.section {
+  position: relative;
+}
+.section.fh {
+  height: 100vh;
+}
+.column.six {
+  width: 50%;
+}
+.column:nth-child(odd) {
+  margin-right: 30px;
+}
+.content {
+  max-width: 800px;
+  position: relative;
+  display: flex;
+}
+.content.f-width {
+  width: 100%;
+}
+.content.padded {
+  padding-bottom: 5em;
+  padding-top: 4em;
+}
+.w-center {
+  margin: auto;
+  align-items: center;
+  place-items: center;
+}
+.headline {
+  font-size: 4em;
+  color: white;
+  position: relative;
+}
+.headline:before {
+  content: '';
+  width: 200px;
+  background: #484634;
+  height: 3px;
+  left: -30%;
+  top: 50px;
+  position: absolute;
+}
+span.underline {
+  box-shadow: 0px 8px #484634;
+}
+blockquote {
+  color: #484634;
+  padding: 15px 10px;
+  position: relative;
+}
+blockquote:before {
+  content: "";
+  height: 3px;
+  width: 40px;
+  background: #484634;
+  left: -50px;
+  top: 25px;
+  position: absolute;
+  font-size: 22px;
+}
+.sidenav {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  transform: translateX(-250px);
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: transform 0.5s;
+}
+.sidenav .logo {
+  color: white;
+  height: 60px;
+  width: 60px;
+  margin: auto;
+  text-decoration: none;
+  display: flex;
+  border: 1px solid white;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.sidenav a:not(.logo) {
+  padding: 8px 8px 8px 0px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  text-align: center;
+  transition: 0.3s;
+}
+.sidenav a:not(.logo):hover {
+  color: #f1f1f1;
+}
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+#main {
+  transition: margin-left 0.5s;
+}
+#main .center {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 38px;
+}
+#main .center span {
+  border: 2px solid #484634;
+  padding: 5px 10px;
+}
+#main .menu {
+  padding: 20px;
+  font-size: 1.6em;
+  color: white;
+  z-index: 10;
+  opacity: 0.6;
+  margin: 10px 0px 10px 20px;
+  position: absolute;
+  transition: opacity 0.2s ease;
+}
+#main .menu:hover {
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.section-1 {
+  padding: 2vh 0px;
+  height: 98vh !important;
+  display: flex;
+  justify-content: center;
+}
+.section-1 p {
+  margin-bottom: 35px;
+}
+.section-1 .column:nth-child(2) .col-wrap {
+  position: relative;
+  text-align: center;
+}
+.section-1 .image {
+  width: 230px;
+  padding: 70px 40px;
+  background: #ffffff;
+  position: relative;
+  text-align: center;
+  box-shadow: 40px 40px #484634;
+}
+.section-2 {
+  background: #9d9e72;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #9d9e72 0%, #b0b184 50%, #9d9e72 100%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #9d9e72 0%, #b0b184 50%, #9d9e72 100%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #9d9e72 0%, #b0b184 50%, #9d9e72 100%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#9d9e72', endColorstr='#9d9e72',GradientType=0);
+  /* IE6-9 */
+  overflow-x: hidden;
+  padding: 2em 0px;
+}
+.section-2 img {
+  position: relative;
+  right: -10%;
+}
+.section-3 {
+  padding: 4em 0px;
+}
+.section-3 .image {
+  width: 100%;
+  max-width: 420px;
+}
+.section-4 {
+  height: initial;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  padding: 20px 0px;
+  height: 80vh;
+  background: url('https://kevinlehtla.ee/wp-content/uploads/2018/11/tyrannosaurus_footer-2.png');
+  background-size: cover;
+  background-position: top center;
+  position: relative;
+}
+.footer .copyright {
+  font-weight: bold;
+}
+.footer a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.footer a:hover {
+  box-shadow: 0px 2px white;
+  transition: all 0.3s ease;
+}
+.footer p {
+  margin-bottom: 0px;
+}
+.footer .footer-links {
+  padding-left: 0px;
+  padding-top: 10px;
+}
+.footer .content {
+  flex-flow: column wrap;
+}
+.footer .footer-links li {
+  display: inline;
+}
+.footer .footer-links li:not(:first-child) {
+  margin: 10px;
+}
+@media screen and (min-width: 1366px) {
+  .content {
+    max-width: 1120px;
+  }
+}
+@media screen and (max-width: 760px) {
+  .section-1 {
+    padding: 4em 0px;
+  }
+  .section-1 .content {
+    max-width: 85%;
+    padding: 20px 40px;
+  }
+  .section-1 .column:nth-child(2) .col-wrap {
+    text-align: left;
+    padding-top: 50px;
+  }
+  .column.six {
+    width: 100%;
+    display: block;
+  }
+  .content {
+    width: 90%;
+    display: block;
+  }
+  .section .content .headline:before {
+    display: none;
+  }
+  #scrolling ul li {
+    width: 500px;
+  }
+}
+@media screen and (max-height: 450px) {
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 40%;
+  padding: 20px;
+  margin-left: 35px;
+  height: 250px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+</style>
+<body>
+
+  
+  <div id="main">
+      <section class="footer clearfix">
+        <div class="dividerr"></div>
+            <div class="content">
+              <ul class="footer-links">
+                <li><a href="{%url 'Landing_1' %}" style="font-size: 25px;">HOME</a></li>
+                <li><a href="{% url 'Teamates_5' %}" style="font-size: 25px;">FOUNDATION</a></li>
+                <li><a href="{% url 'Per_Info_8' %}" style="font-size: 25px;">PERSON_INFO</a></li>
+                <li><a href="{% url 'Per_Database_11'%}" style="font-size: 25px;">DATABASES</a></li>
+                <li><a href="{% url 'Logout'%} " style="font-size: 25px;">LOGOUT</a></li>
+
+                <!-- <li><a href="{% url 'Problem_Statement_7' %}">Problem Statements</a></li> -->
+        
+            </ul>
+                <h2 class="light"><b> FLOOD DETECTION ON ADVERSE NATURAL CONDITION BY USING CATBOOST ALGORITHM</b></h2>
+                
+            </div>
+        </section>
+      <section class="section section-1 fh">
+          <div class="wrapper content w-center">
+              <div class="column six">
+                  <h1 class="heading-styled">Flood</h1>
+                  <p class="light">A flood is an overflow of water (or rarely other fluids) that submerges land that is usually dry. In the sense of "flowing water", the word may also be applied to the inflow of the tide. Floods are an area of study of the discipline hydrology and are of significant concern in agriculture, civil engineering and public health. Human changes to the environment often increase the intensity and frequency of flooding, for example land use changes such as deforestation and removal of wetlands, changes in waterway course or flood controls such as with levees, and larger environmental issues such as climate change and sea level rise. In particular climate change's increased rainfall and extreme weather events increases the severity of other causes for flooding, resulting in more intense floods and increased flood risk.</p>
+                  
+              </div>
+              
+              <div class="column six">
+                  <div class="col-wrap image-wrap">
+                      <img src="https://images.unsplash.com/photo-1600336153113-d66c79de3e91?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Zmxvb2R8ZW58MHx8MHx8fDA%3D" class="image"></img>
+                  </div>
+              </div>
+              
+          </div>
+
+          <div class="wrapper content w-center">
+            <div class="column six">
+                <h1 class="heading-styled">DISASTER</h1>
+                <p class="light">A disaster is a sudden, catastrophic event that causes significant disruption, damage, and distress to communities or ecosystems. Examples include natural disasters like earthquakes, hurricanes, and floods, as well as human-made disasters such as industrial accidents or wars. Disasters often result in loss of life, property, and infrastructure. They can lead to displacement, economic setbacks, and long-term environmental impact. Preparedness, mitigation, and effective response strategies are crucial in minimizing the impact of disasters. Governments, organizations, and communities work together to develop plans and systems to handle emergencies. Communication and coordination are key components in disaster management. First responders play a vital role in providing immediate assistance and support. Humanitarian aid and international cooperation are often necessary in the aftermath of large-scale disasters. The psychological impact of disasters on individuals and communities can be profound, requiring mental health support. Learning from past disasters helps improve future resilience and response efforts. Community involvement and education are essential for disaster preparedness. Climate change is contributing to the frequency and intensity of some types of disasters. Early warning systems and technology aid in forecasting and monitoring potential disasters.
+                </p>
+                <a href="{% url 'Deploy_9' %}" style="font-size: 30px;" class="flat"><b>PREDICT</b></a>
+                
+            </div>
+            
+            <div class="column six">
+                <div class="col-wrap image-wrap">
+                    <img src="/static/images/e.jpg" class="image"></img>
+                </div>
+            </div>
+            
+        </div>
+      </section>
+      
+      
+ 
+  <script>
+    /* Because of Carousel if you resize the window and the posts seem out of place please refresh the page - that should fix it */
+
+function openNav() {
+    document.getElementById("mySidenav").style.transform = "translateX(0px)";
+    document.getElementById("main").style.marginLeft = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.transform = "translateX(-250px)";
+    document.getElementById("main").style.marginLeft = "0";
+}
+
+  </script>
+</body>
+</html>
